@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Boilerplate</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script src="../dist/jquery.simple_validator.js"></script>
+	</head>
+	<body>
+		<form id="contactForm" action="/process">
+			<input type="text" name="age" data-validate="numeric"/>
+			<input type="text" name="name" data-validate="length" data-minlength="3" data-maxlength="10"/>
+			<input type="text" name="email" data-validate="email"/>
+			<input id="formSubmit" type="submit" value="Submit"/>
+		</form>
+		<script>
+			$(function() {
+				$("#formSubmit").click(function(event) {
+					$("#contactForm").simpleValidator();
+					event.preventDefault();
+				});
+			});
+		</script>
+	</body>
+</html>
