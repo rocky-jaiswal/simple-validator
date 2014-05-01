@@ -14,6 +14,9 @@ describe 'simpleValidator', ->
   it 'validates numeric input - 2', ->
     expect(@simpleValidator.validateNumeric(5.5)).toBe(true)
 
+  it 'invalidates numeric input - 3', ->
+    expect(@simpleValidator.validateNumeric(" ")).toBe(false)
+
   it 'invalidates non-numeric input', ->
     expect(@simpleValidator.validateNumeric("a")).toBe(false)
 

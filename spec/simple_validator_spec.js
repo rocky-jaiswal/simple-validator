@@ -15,6 +15,9 @@
     it('validates numeric input - 2', function() {
       return expect(this.simpleValidator.validateNumeric(5.5)).toBe(true);
     });
+    it('invalidates numeric input - 3', function() {
+      return expect(this.simpleValidator.validateNumeric(" ")).toBe(false);
+    });
     it('invalidates non-numeric input', function() {
       return expect(this.simpleValidator.validateNumeric("a")).toBe(false);
     });

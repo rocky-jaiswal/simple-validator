@@ -59,7 +59,7 @@ module.exports = function(grunt) {
 
 		jasmine: {
 			pivotal: {
-				src: ["dist/**/*.js"],
+				src: ["dist/**/*simple_validator.js"],
 				options: {
 					specs: 'spec/*_spec.js',
 					vendor: [
