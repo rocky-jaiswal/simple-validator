@@ -12,28 +12,28 @@
     it('validates numeric input', function() {
       return expect(this.simpleValidator.validateNumeric(5)).toBe(true);
     });
-    it('validates numeric input - 2', function() {
+    it('validates numeric input (float)', function() {
       return expect(this.simpleValidator.validateNumeric(5.5)).toBe(true);
     });
-    it('invalidates numeric input - 3', function() {
+    it('invalidates numeric input (blanks)', function() {
       return expect(this.simpleValidator.validateNumeric(" ")).toBe(false);
     });
     it('invalidates non-numeric input', function() {
       return expect(this.simpleValidator.validateNumeric("a")).toBe(false);
     });
-    it('invalidates non-numeric input - 2', function() {
+    it('invalidates non-numeric input (blanks)', function() {
       return expect(this.simpleValidator.validateNumeric(" ")).toBe(false);
     });
     it('validates input length', function() {
       return expect(this.simpleValidator.validateLength("abcd", 3, 10)).toBe(true);
     });
-    it('validates input length - 2', function() {
+    it('validates input length (more than max)', function() {
       return expect(this.simpleValidator.validateLength("abcde", 3, 4)).toBe(false);
     });
-    it('validates email', function() {
+    it('invalidates bad email', function() {
       return expect(this.simpleValidator.validateEmail("abcddef")).toBe(false);
     });
-    return it('validates email - 2', function() {
+    return it('validates right email', function() {
       return expect(this.simpleValidator.validateEmail("abcd@def")).toBe(true);
     });
   });
